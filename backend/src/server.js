@@ -7,7 +7,6 @@ const connectDB = require('./config/database');
 const authRoutes = require('./routes/authRoutes');
 const loanRoutes = require('./routes/loanRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-const setupRoutes = require('./routes/setupRoutes');
 
 const app = express();
 
@@ -36,7 +35,6 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/auth', authRoutes);
 app.use('/api/loan', loanRoutes);
 app.use('/api/admin', adminRoutes);
-app.use('/api/setup', setupRoutes);
 
 // Health check route
 app.get('/api/health', (req, res) => {
