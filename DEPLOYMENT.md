@@ -49,7 +49,8 @@
    - Create database user with strong password
    - **Network Access**: Whitelist all IPs (0.0.0.0/0) for production
    - Click "Connect" → "Connect your application"
-   - Copy connection string (should look like: `mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/dbname?retryWrites=true&w=majority`)
+    - Copy connection string (example, redacted to avoid detections):
+       - `mongodb+srv://<username>:<password>@<cluster-host>/<dbname>?retryWrites=true&w=majority`
    - Replace `<password>` with your actual database user password
    - Replace `dbname` with your database name (e.g., `saylani_microfinance`)
    - Use complete connection string in Railway's MONGODB_URI
@@ -270,13 +271,13 @@
 ```env
 NODE_ENV=production
 PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/saylani-microfinance
-JWT_SECRET=your-super-secret-jwt-key-min-32-characters
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-host>/<dbname>
+JWT_SECRET=<your-super-secret-jwt-key-min-32-characters>
 EMAIL_HOST=smtp.gmail.com
 EMAIL_PORT=587
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASSWORD=your-16-character-app-password
-FRONTEND_URL=https://your-frontend-domain.com
+EMAIL_USER=<your-email@gmail.com>
+EMAIL_PASSWORD=<your-16-character-app-password>
+FRONTEND_URL=https://<your-frontend-domain.com>
 OFFICE_LOCATION=Saylani Welfare Office, Karachi
 ```
 
